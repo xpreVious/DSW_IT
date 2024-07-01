@@ -1,5 +1,12 @@
 #!/bin/bash
 
+show_help() {
+    echo "Usage: $0 [OPTION]"
+    echo "--date, -d       Show current date"
+    echo "--logs [NUM], -l [NUM]  Create NUM log files (default: 100)"
+    echo "--help, -h       Show this help message"
+}
+
 case "$1" in
     --date|-d)
         echo "$(date)"
@@ -15,10 +22,7 @@ case "$1" in
         done
         ;;
     --help|-h)
-        echo "Usage: $0 [OPTION]"
-        echo "--date, -d       Show current date"
-        echo "--logs [NUM], -l [NUM]  Create NUM log files (default: 100)"
-        echo "--help, -h       Show this help message"
+        show_help
         ;;
     *)
         echo "Invalid option. Use --help or -h for help."
